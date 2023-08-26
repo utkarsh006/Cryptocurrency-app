@@ -1,4 +1,4 @@
-package com.example.crypto
+package com.example.crypto.presentation.theme
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
-import com.example.crypto.ui.theme.CryptoTheme
+import com.example.crypto.presentation.theme.CryptoTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
