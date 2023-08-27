@@ -6,10 +6,16 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
-import com.example.crypto.presentation.theme.CryptoTheme
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.crypto.presentation.Screen
+import com.example.crypto.presentation.coin_detail.CoinDetailScreen
+import com.example.crypto.presentation.coin_list.CoinListScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +26,23 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Text(text = "Hello")
+                    val navController = rememberNavController()
+                    NavHost(
+                        navController = navController,
+                        startDestination = Screen.CoinListScreen.route
+                    ) {
+                        composable(
+                            route = Screen.CoinListScreen.route
+                        ) {
+                            CoinListScreen(navController)
+                        }
+
+                        composable(
+                            route = Screen.CoinDetailScreen.route + "/{coinId}"
+                        ) {
+                            CoinDetailScreen()
+                        }
+                    }
                 }
             }
         }
