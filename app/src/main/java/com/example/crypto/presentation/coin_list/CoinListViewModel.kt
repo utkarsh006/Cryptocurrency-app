@@ -18,7 +18,7 @@ class CoinListViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _state = mutableStateOf(CoinListState())
-    val state: State<CoinListState> get() = _state  //exposing this state to the composables
+    val state: State<CoinListState> get() = _state // exposing this state to the composables
 
     init {
         getCoins()
@@ -41,6 +41,4 @@ class CoinListViewModel @Inject constructor(
             }
         }.launchIn(viewModelScope)
     }
-
-
 }

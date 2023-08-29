@@ -8,10 +8,9 @@
 - Dagger Hilt
 - API Integration
 - Coroutines and Flows
-  
+
 <br>
 
 ### Demo Video 📺
 
 https://github.com/utkarsh006/Cryptocurrency-app/assets/94545831/fdd8774b-32be-4654-9f68-60c0b4461169
-
